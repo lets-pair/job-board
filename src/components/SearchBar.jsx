@@ -1,6 +1,17 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Button from "./common/button";
 import { jobTypes } from "@/constants/jobTypes";
+
+function debounce(func, timeout = 300) {
+  let count = 0;
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
 
 function SearchBar({ searchFn, setJobType, jobType }) {
   const [searchWord, setSearchWord] = useState("");
@@ -9,8 +20,17 @@ function SearchBar({ searchFn, setJobType, jobType }) {
     searchFn(searchWord);
   };
 
+  const debouncedChange = useCallback(
+    debounce((value) => {
+      searchFn(value);
+    }, 300),
+    []
+  );
+
   const handleSearchWordChange = (e) => {
+    const value = e.target.value;
     setSearchWord(e.target.value);
+    debouncedChange(value);
   };
 
   return (
