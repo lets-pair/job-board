@@ -10813,6 +10813,50 @@
         "contactEmail": "email@email",
         "contactPhone": "236236236"
       }
+    },
+    {
+      "type": "Part-Time",
+      "title": "Web Developer III",
+      "description": "Ten years of experience in HTML5. Ten years of experience in HTML5 Ten years of experience in HTML5 Ten years of experience in HTML5 Ten years of experience in HTML5 Ten years of experience in HTML5 Ten years of experience in HTML5 Ten years of experience in HTML5",
+      "location": "Here",
+      "salary": "$50K - 60K",
+      "company": "ABX",
+      "company_description": "dxfdfdfdf",
+      "contact_email": "email@email",
+      "contact_phone": "555-555-5555",
+      "id": "TR8T9Hz"
+    },
+    {
+      "type": "Full-Time",
+      "title": "Web Dev 4",
+      "description": "experienced HTML + CSS , HTML + CSS HTML + CSS HTML + CSS HTML + CSS HTML + CSS , experienced HTML + CSS , HTML + CSS HTML + CSS HTML + CSS HTML + CSS HTML + CSS experienced HTML + CSS , HTML + CSS HTML + CSS HTML + CSS HTML + CSS HTML + CSS ",
+      "location": "",
+      "salary": "$50K - 60K",
+      "country": "Canada",
+      "state": "Alabama",
+      "city": "Vancouver",
+      "company": "AAAAA",
+      "company_description": "",
+      "contact_email": "email@email",
+      "contact_phone": "555-555-5555",
+      "province": "New Brunswick",
+      "id": "hNlMYi2"
+    },
+    {
+      "type": "Full-Time",
+      "title": "Web Dev 5",
+      "description": " Super experienced Web developer Super experienced Web developer Super experienced Web developer Super experienced Web developer Super experienced Web developer Super experienced Web developer ",
+      "location": {
+        "country": "Canada",
+        "stateCode": "New Brunswick",
+        "city": "Vancouver"
+      },
+      "salary": "$70K - 80K",
+      "company": "ABC",
+      "company_description": "Abc",
+      "contact_email": "email@email",
+      "contact_phone": "555-555-5555",
+      "id": "whHGMyo"
     }
   ]
 }
