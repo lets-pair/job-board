@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     port: 3000,
     allowedHosts: true,
-    host: [".react.da-vinci.cloud","test.react.da-vinci.cloud"],
+    host: ["localhost"],
     proxy: {
       "/api": {
         target: "http://localhost:8100",
