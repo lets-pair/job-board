@@ -1,26 +1,31 @@
 import { useLoaderData, useNavigate, Link } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
+import useConfirmDialog from "../hooks/useConfirmDialog";
+import ConfirmDialog from "@/components/ConfirmDialog";
 
 const JobPage = ({ deleteJob }) => {
   const navigate = useNavigate();
+  const { closeDialog, openDialog, confirm, isOpen } = useConfirmDialog();
   const job = useLoaderData();
 
   function onDeleteClick(id) {
-    const confirm = window.confirm(
-      "Are you sure you want to delete this listing?"
-    );
-    if (!confirm) return;
-
-    deleteJob(id);
-    toast.success("Job deleted successfully");
-    return navigate("/jobs");
+    openDialog(() => {
+      deleteJob(id);
+      toast.success("Job deleted successfully");
+      return navigate("/jobs");
+    });
   }
 
   return (
     <>
       <section>
         <div className="container m-auto py-6 px-6">
+          <ConfirmDialog
+            isOpen={isOpen}
+            onClose={closeDialog}
+            onConfirm={confirm}
+          />
           <Link
             to="/jobs"
             className="text-indigo-500 hover:text-indigo-600 flex items-center"
@@ -40,7 +45,10 @@ const JobPage = ({ deleteJob }) => {
                 <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
                   <i className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i>
                   <FaMapMarker className="text-orange-700 mr-1" />
-                  <p className="text-orange-700">{job.location.city} - {job.location.stateCode} - {job.location.country}</p>
+                  <p className="text-orange-700">
+                    {job.location.city} - {job.location.stateCode} -{" "}
+                    {job.location.country}
+                  </p>
                 </div>
               </div>
 
