@@ -7,9 +7,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
   server: {
-    port: 3000,
+    port: 5173,
     allowedHosts: true,
-    host: [".react.da-vinci.cloud","test.react.da-vinci.cloud"],
+    host: true,
     proxy: {
       "/api": {
         target: "http://localhost:8100",
