@@ -1,4 +1,3 @@
-import toast from "daisyui/components/toast";
 import { useState } from "react";
 
 const useConfirmDialog = () => {
@@ -21,7 +20,6 @@ const useConfirmDialog = () => {
       closeDialog();
     } catch (error) {
       console.log(error);
-      toast.error("Error in deleting job");
     }
   };
 
